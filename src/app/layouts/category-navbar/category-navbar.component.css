@@ -7,3 +7,15 @@ nav {
 .nav-link {
   text-transform: uppercase;
 }
+
+.input-group {
+  width: 300px !important;
+}
+
+input {
+  width: 200px !important;
+}
+
+button {
+  background-color: var(--primary-color);
+}
