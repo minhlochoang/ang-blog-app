@@ -4,14 +4,6 @@
       <ul class="navbar-nav" *ngFor="let category of categoryArray">
         <li class="nav-item ml-3"><a href="" class="nav-link" [routerLink]="['/category',category.data.category, category.id]">{{ category.data.category }}</a></li>
       </ul>
-
-
-    </div>
-    <div class="input-group rounded">
-      <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-      <button class="input-group-text border-0 text-white" id="search-addon" (click)="onSearch()">
-        <i class="fas fa-search"></i>
-      </button>
     </div>
   </div>
 </nav>

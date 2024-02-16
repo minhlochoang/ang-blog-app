@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CategoriesService } from 'src/app/services/categories.service';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-category-navbar',
@@ -7,9 +8,13 @@ import { CategoriesService } from 'src/app/services/categories.service';
   styleUrls: ['./category-navbar.component.css']
 })
 export class CategoryNavbarComponent {
-  categoryArray: Array<any> = [];
+ categoryArray: Array<any> = [];
+  searchQuery: string = ''
+  searchResults: any[] = [];
+
  constructor(
-  private categoryService: CategoriesService
+  private categoryService: CategoriesService,
+  private postService: PostsService
  ){}
 
  ngOnInit() {
@@ -19,6 +24,9 @@ export class CategoryNavbarComponent {
  }
 
  onSearch() {
-
+    this.postService.search(this.searchQuery).subscribe(results => {
+    console.log(results)
+    this.searchResults = results;
+  });
  }
 }
